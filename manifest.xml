@@ -11,12 +11,15 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Datanize Tools"/>
   <Description DefaultValue="Datanize Excel Online Add-in"/>
+  
   <Hosts>
     <Host Name="Workbook"/>
   </Hosts>
+
   <DefaultSettings>
     <SourceLocation DefaultValue="https://entac78.github.io/Datanize/taskpane.html"/>
   </DefaultSettings>
+
   <Permissions>ReadWriteDocument</Permissions>
 
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
@@ -29,6 +32,8 @@
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <CustomTab id="tabDatanizeTools">
               <Label resid="tabLabel"/>
+              
+              <!-- Syncgauge Group -->
               <Group id="grpSyncgauge">
                 <Label resid="grpSyncLabel"/>
                 <Control xsi:type="Button" id="Syncgaugepart2Matching">
@@ -38,6 +43,7 @@
                   </Action>
                 </Control>
               </Group>
+
             </CustomTab>
           </ExtensionPoint>
         </DesktopFormFactor>
@@ -48,6 +54,7 @@
       <bt:Urls>
         <bt:Url id="Commands.Url" DefaultValue="https://entac78.github.io/Datanize/commands.html"/>
       </bt:Urls>
+
       <bt:ShortStrings>
         <bt:String id="tabLabel" DefaultValue="Datanize Tools"/>
         <bt:String id="grpSyncLabel" DefaultValue="Syncgauge"/>
