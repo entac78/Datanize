@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp 
+    xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+    xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+    xsi:type="TaskPaneApp">
+
+  <Id>11111111-2222-3333-4444-555555555555</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Datanize</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Datanize Tools"/>
+  <Description DefaultValue="Datanize Excel Online Add-in"/>
+
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://yourdomain/taskpane.html"/>
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides 
+      xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+      xsi:type="VersionOverridesV1_0">
+
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+
+          <!-- Ribbon Commands -->
+          <FunctionFile resid="Commands.Url"/>
+
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="tabDatanizeTools">
+              <Label resid="tabLabel"/>
+
+              <!-- Syncgauge Group -->
+              <Group id="grpSyncgauge">
+                <Label resid="grpSyncLabel"/>
+                <Control xsi:type="Button" id="Syncgaugepart2Matching">
+                  <Label resid="btnSyncMatching"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>syncgaugepart2Matching</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="BuildTemplateAndRunChecks">
+                  <Label resid="btnBuildTemplate"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>BuildTemplateAndRunChecks</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="CategorizeEmployeesAndRevenue">
+                  <Label resid="btnCategorizeEmpRev"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>CategorizeEmployeesAndRevenue</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+
+              <!-- SalesNav Data Group -->
+              <Group id="grpSalesNav">
+                <Label resid="grpSalesNavLabel"/>
+                <Control xsi:type="Button" id="ContactsOffshoreStatus_SalesNavPull">
+                  <Label resid="btnContactsStatus"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ContactsOffshoreStatus_SalesNavPull</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+
+              <!-- Email Gen and Tm Updating -->
+              <Group id="grpEmailGen">
+                <Label resid="grpEmailGenLabel"/>
+                <Control xsi:type="Button" id="FindDateMatchAndFormatToTMUpdateSheet">
+                  <Label resid="btnFormatToTM"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>FindDateMatchAndFormatToTMUpdateSheet</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="CleanWebsiteAndDomain">
+                  <Label resid="btnCleanWebsite"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>CleanWebsiteAndDomain</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="ExportEmailsToTxt">
+                  <Label resid="btnExportEmails"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ExportEmailsToTxt</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="GetEmailsFromWebsites">
+                  <Label resid="btnGetEmailsWeb"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>GetEmailsFromWebsites</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+
+              <!-- Background Templating -->
+              <Group id="grpBackground">
+                <Label resid="grpBackgroundLabel"/>
+                <Control xsi:type="Button" id="AppendEducationWideWithHeaders">
+                  <Label resid="btnAppendEducation"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>AppendEducationWideWithHeaders</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="ConcatenateByContactID_AllValues">
+                  <Label resid="btnConcatenate"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>ConcatenateByContactID_AllValues</FunctionName>
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="CreateConcatenatedJobHistory">
+                  <Label resid="btnCreateJobHistory"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>CreateConcatenatedJobHistory</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+
+              <!-- Quality Assurance -->
+              <Group id="grpQA">
+                <Label resid="grpQALabel"/>
+                <Control xsi:type="Button" id="HighlightInvalidData_Dynamic">
+                  <Label resid="btnQAInvalid"/>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>HighlightInvalidData_Dynamic</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+
+            </CustomTab>
+          </ExtensionPoint>
+
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <!-- Resources -->
+    <Resources>
+      <bt:Urls>
+        <bt:Url id="Commands.Url" DefaultValue="https://yourdomain/commands.html"/>
+      </bt:Urls>
+
+      <bt:ShortStrings>
+        <bt:String id="tabLabel" DefaultValue="Datanize Tools"/>
+        <bt:String id="grpSyncLabel" DefaultValue="Syncgauge"/>
+        <bt:String id="btnSyncMatching" DefaultValue="Syncgauge Matching"/>
+        <bt:String id="btnBuildTemplate" DefaultValue="Syncgauge Templating"/>
+        <bt:String id="btnCategorizeEmpRev" DefaultValue="Categorize Employees and Revenue"/>
+
+        <bt:String id="grpSalesNavLabel" DefaultValue="SalesNav Data"/>
+        <bt:String id="btnContactsStatus" DefaultValue="Contacts Status Tag"/>
+
+        <bt:String id="grpEmailGenLabel" DefaultValue="Email Gen and TM Updating"/>
+        <bt:String id="btnFormatToTM" DefaultValue="Format To TM Update Sheet"/>
+        <bt:String id="btnCleanWebsite" DefaultValue="Clean Website & Domain"/>
+        <bt:String id="btnExportEmails" DefaultValue="Export Emails to TXT"/>
+        <bt:String id="btnGetEmailsWeb" DefaultValue="Get Emails From Websites"/>
+
+        <bt:String id="grpBackgroundLabel" DefaultValue="Background Templating"/>
+        <bt:String id="btnAppendEducation" DefaultValue="Append Education Wide"/>
+        <bt:String id="btnConcatenate" DefaultValue="Concatenate By ContactID"/>
+        <bt:String id="btnCreateJobHistory" DefaultValue="Create Concatenated Job History"/>
+
+        <bt:String id="grpQALabel" DefaultValue="Quality Assurance"/>
+        <bt:String id="btnQAInvalid" DefaultValue="QA New Companies"/>
+      </bt:ShortStrings>
+    </Resources>
+
+  </VersionOverrides>
+
+</OfficeApp>
