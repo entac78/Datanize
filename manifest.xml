@@ -1,82 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<OfficeApp 
-          xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" 
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-          xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" 
-          xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
-          xsi:type="TaskPaneApp">
-
-  <Id>92b650b5-24c0-41c6-b4ff-77094af2a19a</Id>
-  <Version>1.0.0.0</Version>
-  <ProviderName>Your Company Name</ProviderName>
-  <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Datanize" />
-  <Description DefaultValue="Datanize Add-in"/>
-  <IconUrl DefaultValue="~remoteAppUrl/Images/Button32x32.png" />
-  <SupportUrl DefaultValue="http://www.contoso.com" />
-
-  <AppDomains>
-    <AppDomain>https://entac78.github.io</AppDomain>
-  </AppDomains>
-
-  <Hosts>
-    <Host Name="Workbook" />
-  </Hosts>
-
-  <DefaultSettings>
-    <SourceLocation DefaultValue="~remoteAppUrl/Home.html" />
-  </DefaultSettings>
-
-  <Permissions>ReadWriteDocument</Permissions>
-
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
-    <Hosts>
-      <Host xsi:type="Workbook">
-        <DesktopFormFactor>
-          <FunctionFile resid="Datanize.FunctionFile.Url" />
-
-          <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <OfficeTab id="TabHome">
-              <Group id="grpSyncgauge" label="Syncgauge" autoScale="true">
-                <Control xsi:type="Button" id="Syncgaugepart2Matching">
-                  <Label resid="Datanize.SyncgaugeButton.Label" />
-                  <Supertip>
-                    <Title resid="Datanize.SyncgaugeButton.Label" />
-                    <Description resid="Datanize.SyncgaugeButton.Tooltip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Datanize.tpicon_16x16" />
-                    <bt:Image size="32" resid="Datanize.tpicon_32x32" />
-                    <bt:Image size="80" resid="Datanize.tpicon_80x80" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>syncgaugepart2Matching</FunctionName>
-                  </Action>
-                </Control>
-              </Group>
-            </OfficeTab>
-          </ExtensionPoint>
-        </DesktopFormFactor>
-      </Host>
-    </Hosts>
-
-    <Resources>
-      <bt:Images>
-        <bt:Image id="Datanize.tpicon_16x16" DefaultValue="~remoteAppUrl/Images/Button16x16.png" />
-        <bt:Image id="Datanize.tpicon_32x32" DefaultValue="~remoteAppUrl/Images/Button32x32.png" />
-        <bt:Image id="Datanize.tpicon_80x80" DefaultValue="~remoteAppUrl/Images/Button80x80.png" />
-      </bt:Images>
-      <bt:Urls>
-        <bt:Url id="Datanize.FunctionFile.Url" DefaultValue="~remoteAppUrl/commands.html" />
-      </bt:Urls>
-      <bt:ShortStrings>
-        <bt:String id="Datanize.SyncgaugeButton.Label" DefaultValue="Syncgauge Matching" />
-      </bt:ShortStrings>
-      <bt:LongStrings>
-        <bt:String id="Datanize.SyncgaugeButton.Tooltip" DefaultValue="Click to run the Syncgauge Matching process." />
-      </bt:LongStrings>
-    </Resources>
-  </VersionOverrides>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
+<Id>15947537-162d-457c-8e39-bbb32408c931</Id>
+<Version>1.0.0.0</Version>
+<ProviderName>MSGNI</ProviderName>
+<DefaultLocale>en-US</DefaultLocale>
+<DisplayName DefaultValue="Row Edit Tracker"/>
+<Description DefaultValue="Tracks number of rows edited in Excel Online"/>
+<Hosts>
+<Host Name="Workbook"/>
+</Hosts>
+<DefaultSettings>
+<SourceLocation DefaultValue="https://github.com/entac78/Datanize/edit/main/manifest.xml"/>
+</DefaultSettings>
 </OfficeApp>
-
-
